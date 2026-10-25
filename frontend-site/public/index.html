@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geopolitweakers - Industriële Capaciteit & Logistieke Realiteit</title>
+    <style>
+        /* --- NYT & GUARDIAN CORE STYLES --- */
+        :root {
+            --guardian-blue: #052962;
+            --guardian-red: #cc0000;
+            --nyt-black: #121212;
+            --nyt-gray: #666666;
+            --bg-cream: #fbfbf9;
+            --border-color: #dfdfdf;
+            --dpg-accent: #0056b3;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-cream);
+            color: var(--nyt-black);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.5;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        /* --- HEADER & MASTHEAD --- */
+        header {
+            background-color: var(--guardian-blue);
+            border-bottom: 4px solid var(--guardian-red);
+            color: white;
+            padding: 15px 5%;
+        }
+
+        .masthead {
+            align-items: center;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+            display: flex;
+            justify-content: space-between;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding-bottom: 10px;
+        }
+
+        .logo {
+            font-family: "Georgia", Times, serif;
+            font-size: 2.4rem;
+            font-weight: 900;
+            letter-spacing: -1px;
+        }
+
+        .logo span {
+            color: #4ca3ff;
+            font-weight: 400;
+        }
+
+        .tagline {
+            color: #cbd5e1;
+            font-size: 0.85rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        nav {
+            display: flex;
+            gap: 20px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            max-width: 1400px;
+            margin: 10px auto 0 auto;
+        }
+
+        nav a:hover {
+            color: #4ca3ff;
+        }
+
+        /* --- TICKER --- */
+        .ticker-container {
+            background-color: #fff;
+            border-bottom: 1px solid var(--border-color);
+            font-size: 0.85rem;
+            padding: 8px 5%;
+        }
+        
+        .ticker-inner {
+            align-items: center;
+            display: flex;
+            gap: 15px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .ticker-label {
+            background-color: var(--guardian-red);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: bold;
+            padding: 2px 8px;
+            text-transform: uppercase;
+        }
+
+        /* --- MAIN ASYMMETRIC GRID --- */
+        .main-container {
+            display: grid;
+            gap: 30px;
+            grid-template-columns: 3fr 2fr 1.5fr;
+            max-width: 1400px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+
+        @media (max-width: 1024px) {
+            .main-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* --- ARTICLE CARDS STYLING --- */
+        .category-tag {
+            color: var(--guardian-red);
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 900;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+        }
+
+        h1, h2, h3 {
+            font-family: "Georgia", Times, serif;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .lead-article {
+            border-right: 1px solid var(--border-color);
+            padding-right: 25px;
+        }
+
+        .lead-article h1 {
+            font-size: 2.5rem;
+            line-height: 1.15;
+            margin-bottom: 15px;
+        }
+
+        .lead-article h1:hover, .sub-article h2:hover {
+            color: var(--dpg-accent);
+        }
+
+        .meta-info {
+            color: var(--nyt-gray);
+            font-size: 0.8rem;
+            margin-bottom: 12px;
+        }
+
+        .summary {
+            color: #333;
+            font-size: 1.05rem;
+            margin-bottom: 20px;
+        }
+
+        .spec-box {
+            background-color: #f1f5f9;
+            border-left: 4px solid var(--guardian-blue);
+            font-family: monospace;
+            font-size: 0.9rem;
+            margin-top: 15px;
+            padding: 12px;
+        }
+
+        .sub-column {
+            border-right: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            padding-right: 25px;
+        }
+
+        .sub-article {
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 20px;
+        }
+
+        .sub-article:last-child {
+            border-bottom: none;
+        }
+
+        .sub-article h2 {
+            font-size: 1.4rem;
+            line-height: 1.2;
+        }
+
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .widget-title {
+            border-bottom: 2px solid var(--nyt-black);
+            font-family: sans-serif;
+            font-size: 1rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+            padding-bottom: 5px;
+            text-transform: uppercase;
+        }
+
+        .most-read-item {
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            gap: 15px;
+            padding: 10px 0;
+        }
+
+        .most-read-number {
+            color: var(--border-color);
+            font-family: "Georgia", serif;
+            font-size: 2rem;
+            font-weight: bold;
+            line-height: 1;
+        }
+
+        .most-read-text {
+            font-size: 0.9rem;
+            font-weight: bold;
+        }
+
+        footer {
+            background-color: var(--nyt-black);
+            border-top: 5px solid var(--guardian-blue);
+            color: white;
+            font-size: 0.85rem;
+            margin-top: 50px;
+            padding: 40px 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="masthead">
+            <div class="logo">GEOPOLIT<span>WEAKERS</span></div>
+            <div class="tagline">Materiële Analyse & Logistieke Realiteit</div>
+        </div>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">Industriële Capaciteit</a>
+            <a href="#">Logistieke Ketens</a>
+            <a href="#">Monetaire Systemen</a>
+            <a href="#">Munitie & Specs</a>
+        </nav>
+    </header>
+
+    <div class="ticker-container">
+        <div class="ticker-inner">
+            <div class="ticker-label">Materiële Update</div>
+            <marquee behavior="scroll" direction="left" scrollamount="4">
+                ++ STRAAT VAN HORMUZ: Olietankers handhaven capaciteit ondanks geopolitieke retoriek ++ VS MUNISIEVOORRADEN: 155mm artillerieproductie bereikt kritieke grens ++ BRICS: Uitbreiding grensoverschrijdend betalingssysteem operationeel ++
+            </marquee>
+        </div>
+    </div>
+
+    <main class="main-container">
+        <section class="lead-article">
+            <article>
+                <span class="category-tag">Industriële Capaciteit</span>
+                <a href="#">
+                    <h1>De wiskunde van munitieproductie: Waarom de westerse hegemonie vastloopt op logistiek</h1>
+                </a>
+                <div class="meta-info">Door Redactie Geopolitweakers • 25 oktober 2026</div>
+                <p class="summary">
+                    Terwijl politieke kanalen in Washington en Brussel debatteren over sancties en verkiezingen, tonen de harde fabrieksdata een andere realiteit. Een diepgaande analyse van de industriële toeleveringsketens laat zien dat de materiële proxy-strategie botst op fysieke productiebeperkingen.
+                </p>
+                <p>
+                    De westerse defensie-industrie is de afgelopen decennia geoptimaliseerd voor maximale winstmarges en asymmetrische conflicten. In een grootschalig industrieel conflict blijkt deze structuur echter niet in staat om te concurreren met gecentraliseerde planeconomieën. Zonder grondstoffensoevereiniteit en fysieke fabrieken blijft retoriek slechts symbolisch.
+                </p>
+                <div class="spec-box">
+                    <strong>[Materiële Benchmark Specs]</strong><br>
+                    • Westerse productiecapaciteit (155mm): ~1.2M stuks per jaar<br>
+                    • Euraziatische productiecapaciteit: >4.5M stuks per jaar (geverifieerd)<br>
+                    • Knelpunt: Toeleveringsketen van nitrocellulose en speciaal staal.
+                </div>
+            </article>
+        </section>
+
+        <section class="sub-column">
+            <div class="widget-title">Laatste Data-Analyses</div>
+            
+            <article class="sub-article">
+                <span class="category-tag">Monetaire Systemen</span>
+                <a href="#">
+                    <h2>De-dollarisatie versnelt: Hoe de materiële handelsstromen SWIFT omzeilen</h2>
+                </a>
+                <div class="meta-info">Analist: Michael Hudson school</div>
+                <p class="summary" style="font-size:0.9rem;">
+                    Sancties hebben de opkomst van een parallel financieel systeem gedwongen. Grondstoffen worden niet langer in fiatdollars afgerekend.
+                </p>
+            </article>
+
+            <article class="sub-article">
+                <span class="category-tag">Logistieke Ketens</span>
+                <a href="#">
+                    <h2>Israëlische defensie-afhankelijkheid: Wat de munitietransfers over soevereiniteit zeggen</h2>
+                </a>
+                <div class="meta-info">Bron: Brian Berletic Data-analyse</div>
+                <p class="summary" style="font-size:0.9rem;">
+                    Een logistieke ontleding van de dagelijkse ISR- en munitievluchten vanuit de VS toont aan waar de feitelijke controlekamer zich bevindt.
+                </p>
+            </article>
+        </section>
+
+        <aside class="sidebar">
+            <div>
+                <div class="widget-title">Meest Gelezen</div>
+                
+                <div class="most-read-item">
+                    <div class="most-read-number">1</div>
+                    <div class="most-read-text"><a href="#">Waarom de Amerikaanse Midterms de industriële realiteit aan de pomp niet kunnen veranderen.</a></div>
+                </div>
+
+                <div class="most-read-item">
+                    <div class="most-read-number">2</div>
+                    <div class="most-read-text"><a href="#">Raketbereik vs. Luchtverdediging: De pure fysica achter het vastlopen van de westerse doctrine.</a></div>
+                </div>
+
+                <div class="most-read-item">
+                    <div class="most-read-number">3</div>
+                    <div class="most-read-text"><a href="#">De-industrialisatie van Duitsland: Een logistieke autopsie op de Europese concurrentiekracht.</a></div>
+                </div>
+            </div>
+        </aside>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Geopolitweakers.nl • Onafhankelijke, materiële en logistieke observaties vanuit de westerse hegemonie.</p>
+    </footer>
+
+</body>
+</html>
+

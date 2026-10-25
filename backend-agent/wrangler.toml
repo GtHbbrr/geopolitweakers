@@ -1,0 +1,15 @@
+name = "geopolitweakers-agent"
+main = "src/index.ts"
+compatibility_date = "2026-10-25"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "geopolitweakers-db"
+database_id = "<JOUW_DATABASE_ID>"
+
+[ai]
+binding = "AI"
+
+[triggers]
+crons = ["0 * * * *"]
+
