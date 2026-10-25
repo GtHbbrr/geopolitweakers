@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Geopolitweakers - Industriële Capaciteit & Logistieke Realiteit</title>
     <style>
-        /* --- NYT & GUARDIAN CORE STYLES --- */
         :root {
             --guardian-blue: #052962;
             --guardian-red: #cc0000;
@@ -15,237 +14,33 @@
             --border-color: #dfdfdf;
             --dpg-accent: #0056b3;
         }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            background-color: var(--bg-cream);
-            color: var(--nyt-black);
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            line-height: 1.5;
-        }
-
-        a {
-            color: inherit;
-            text-decoration: none;
-        }
-
-        /* --- HEADER & MASTHEAD --- */
-        header {
-            background-color: var(--guardian-blue);
-            border-bottom: 4px solid var(--guardian-red);
-            color: white;
-            padding: 15px 5%;
-        }
-
-        .masthead {
-            align-items: center;
-            border-bottom: 1px solid rgba(255,255,255,0.2);
-            display: flex;
-            justify-content: space-between;
-            max-width: 1400px;
-            margin: 0 auto;
-            padding-bottom: 10px;
-        }
-
-        .logo {
-            font-family: "Georgia", Times, serif;
-            font-size: 2.4rem;
-            font-weight: 900;
-            letter-spacing: -1px;
-        }
-
-        .logo span {
-            color: #4ca3ff;
-            font-weight: 400;
-        }
-
-        .tagline {
-            color: #cbd5e1;
-            font-size: 0.85rem;
-            font-weight: bold;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
-
-        nav {
-            display: flex;
-            gap: 20px;
-            font-size: 0.9rem;
-            font-weight: bold;
-            max-width: 1400px;
-            margin: 10px auto 0 auto;
-        }
-
-        nav a:hover {
-            color: #4ca3ff;
-        }
-
-        /* --- TICKER --- */
-        .ticker-container {
-            background-color: #fff;
-            border-bottom: 1px solid var(--border-color);
-            font-size: 0.85rem;
-            padding: 8px 5%;
-        }
-        
-        .ticker-inner {
-            align-items: center;
-            display: flex;
-            gap: 15px;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .ticker-label {
-            background-color: var(--guardian-red);
-            color: white;
-            font-size: 0.75rem;
-            font-weight: bold;
-            padding: 2px 8px;
-            text-transform: uppercase;
-        }
-
-        /* --- MAIN ASYMMETRIC GRID --- */
-        .main-container {
-            display: grid;
-            gap: 30px;
-            grid-template-columns: 3fr 2fr 1.5fr;
-            max-width: 1400px;
-            margin: 20px auto;
-            padding: 0 20px;
-        }
-
-        @media (max-width: 1024px) {
-            .main-container {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        /* --- ARTICLE CARDS STYLING --- */
-        .category-tag {
-            color: var(--guardian-red);
-            display: inline-block;
-            font-size: 0.75rem;
-            font-weight: 900;
-            letter-spacing: 1px;
-            margin-bottom: 5px;
-            text-transform: uppercase;
-        }
-
-        h1, h2, h3 {
-            font-family: "Georgia", Times, serif;
-            font-weight: 700;
-            margin-bottom: 10px;
-        }
-
-        .lead-article {
-            border-right: 1px solid var(--border-color);
-            padding-right: 25px;
-        }
-
-        .lead-article h1 {
-            font-size: 2.5rem;
-            line-height: 1.15;
-            margin-bottom: 15px;
-        }
-
-        .lead-article h1:hover, .sub-article h2:hover {
-            color: var(--dpg-accent);
-        }
-
-        .meta-info {
-            color: var(--nyt-gray);
-            font-size: 0.8rem;
-            margin-bottom: 12px;
-        }
-
-        .summary {
-            color: #333;
-            font-size: 1.05rem;
-            margin-bottom: 20px;
-        }
-
-        .spec-box {
-            background-color: #f1f5f9;
-            border-left: 4px solid var(--guardian-blue);
-            font-family: monospace;
-            font-size: 0.9rem;
-            margin-top: 15px;
-            padding: 12px;
-        }
-
-        .sub-column {
-            border-right: 1px solid var(--border-color);
-            display: flex;
-            flex-direction: column;
-            gap: 25px;
-            padding-right: 25px;
-        }
-
-        .sub-article {
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 20px;
-        }
-
-        .sub-article:last-child {
-            border-bottom: none;
-        }
-
-        .sub-article h2 {
-            font-size: 1.4rem;
-            line-height: 1.2;
-        }
-
-        .sidebar {
-            display: flex;
-            flex-direction: column;
-            gap: 30px;
-        }
-
-        .widget-title {
-            border-bottom: 2px solid var(--nyt-black);
-            font-family: sans-serif;
-            font-size: 1rem;
-            font-weight: 800;
-            margin-bottom: 15px;
-            padding-bottom: 5px;
-            text-transform: uppercase;
-        }
-
-        .most-read-item {
-            border-bottom: 1px solid var(--border-color);
-            display: flex;
-            gap: 15px;
-            padding: 10px 0;
-        }
-
-        .most-read-number {
-            color: var(--border-color);
-            font-family: "Georgia", serif;
-            font-size: 2rem;
-            font-weight: bold;
-            line-height: 1;
-        }
-
-        .most-read-text {
-            font-size: 0.9rem;
-            font-weight: bold;
-        }
-
-        footer {
-            background-color: var(--nyt-black);
-            border-top: 5px solid var(--guardian-blue);
-            color: white;
-            font-size: 0.85rem;
-            margin-top: 50px;
-            padding: 40px 20px;
-            text-align: center;
-        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background-color: var(--bg-cream); color: var(--nyt-black); line-height: 1.5; }
+        a { text-decoration: none; color: inherit; }
+        header { background-color: var(--guardian-blue); color: white; padding: 15px 5%; border-bottom: 4px solid var(--guardian-red); }
+        .masthead { display: flex; justify-content: space-between; align-items: center; max-width: 1400px; margin: 0 auto; border-bottom: 1px solid rgba(255,255,255,0.2); padding-bottom: 10px; }
+        .logo { font-family: "Georgia", Times, serif; font-size: 2.4rem; font-weight: 900; letter-spacing: -1px; }
+        .logo span { color: #4ca3ff; font-weight: 400; }
+        .tagline { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; color: #cbd5e1; font-weight: bold; }
+        nav { max-width: 1400px; margin: 10px auto 0 auto; display: flex; gap: 20px; font-size: 0.9rem; font-weight: bold; }
+        .ticker-container { background-color: #fff; border-bottom: 1px solid var(--border-color); padding: 8px 5%; font-size: 0.85rem; }
+        .ticker-inner { max-width: 1400px; margin: 0 auto; display: flex; align-items: center; gap: 15px; }
+        .ticker-label { background-color: var(--guardian-red); color: white; padding: 2px 8px; font-weight: bold; text-transform: uppercase; font-size: 0.75rem; }
+        .main-container { max-width: 1400px; margin: 20px auto; padding: 0 20px; display: grid; grid-template-columns: 3fr 2fr 1.5fr; gap: 30px; }
+        @media (max-width: 1024px) { .main-container { grid-template-columns: 1fr; } }
+        .category-tag { color: var(--guardian-red); font-size: 0.75rem; text-transform: uppercase; font-weight: 900; letter-spacing: 1px; margin-bottom: 5px; display: inline-block; }
+        h1, h2, h3 { font-family: "Georgia", Times, serif; font-weight: 700; margin-bottom: 10px; }
+        .lead-article { border-right: 1px solid var(--border-color); padding-right: 25px; }
+        .lead-article h1 { font-size: 2.5rem; line-height: 1.15; margin-bottom: 15px; }
+        .lead-article h1:hover { color: var(--dpg-accent); }
+        .meta-info { font-size: 0.8rem; color: var(--nyt-gray); margin-bottom: 12px; }
+        .summary { font-size: 1.05rem; color: #333; margin-bottom: 20px; }
+        .spec-box { background-color: #f1f5f9; border-left: 4px solid var(--guardian-blue); padding: 12px; font-size: 0.9rem; font-family: monospace; margin-top: 15px; white-space: pre-line; }
+        .sub-column { border-right: 1px solid var(--border-color); padding-right: 25px; display: flex; flex-direction: column; gap: 25px; }
+        .sub-article { border-bottom: 1px solid var(--border-color); padding-bottom: 20px; }
+        .sidebar { display: flex; flex-direction: column; gap: 30px; }
+        .widget-title { font-size: 1rem; text-transform: uppercase; border-bottom: 2px solid var(--nyt-black); padding-bottom: 5px; margin-bottom: 15px; font-family: sans-serif; font-weight: 800; }
+        footer { background-color: var(--nyt-black); color: white; text-align: center; padding: 40px 20px; margin-top: 50px; font-size: 0.85rem; border-top: 5px solid var(--guardian-blue); }
     </style>
 </head>
 <body>
@@ -256,99 +51,84 @@
             <div class="tagline">Materiële Analyse & Logistieke Realiteit</div>
         </div>
         <nav>
-            <a href="#">Home</a>
-            <a href="#">Industriële Capaciteit</a>
-            <a href="#">Logistieke Ketens</a>
-            <a href="#">Monetaire Systemen</a>
-            <a href="#">Munitie & Specs</a>
+            <a href="#">Home</a> <a href="#">Industriële Capaciteit</a> <a href="#">Logistieke Ketens</a> <a href="#">Monetaire Systemen</a>
         </nav>
     </header>
 
     <div class="ticker-container">
         <div class="ticker-inner">
             <div class="ticker-label">Materiële Update</div>
-            <marquee behavior="scroll" direction="left" scrollamount="4">
-                ++ STRAAT VAN HORMUZ: Olietankers handhaven capaciteit ondanks geopolitieke retoriek ++ VS MUNISIEVOORRADEN: 155mm artillerieproductie bereikt kritieke grens ++ BRICS: Uitbreiding grensoverschrijdend betalingssysteem operationeel ++
+            <marquee id="ticker-text" behavior="scroll" direction="left" scrollamount="4">
+                ++ GEOPOLITWEAKERS NETWERK: AI-Agent operationeel. Wachten op logistieke datastream... ++
             </marquee>
         </div>
     </div>
 
     <main class="main-container">
-        <section class="lead-article">
-            <article>
-                <span class="category-tag">Industriële Capaciteit</span>
-                <a href="#">
-                    <h1>De wiskunde van munitieproductie: Waarom de westerse hegemonie vastloopt op logistiek</h1>
-                </a>
-                <div class="meta-info">Door Redactie Geopolitweakers • 25 oktober 2026</div>
-                <p class="summary">
-                    Terwijl politieke kanalen in Washington en Brussel debatteren over sancties en verkiezingen, tonen de harde fabrieksdata een andere realiteit. Een diepgaande analyse van de industriële toeleveringsketens laat zien dat de materiële proxy-strategie botst op fysieke productiebeperkingen.
-                </p>
-                <p>
-                    De westerse defensie-industrie is de afgelopen decennia geoptimaliseerd voor maximale winstmarges en asymmetrische conflicten. In een grootschalig industrieel conflict blijkt deze structuur echter niet in staat om te concurreren met gecentraliseerde planeconomieën. Zonder grondstoffensoevereiniteit en fysieke fabrieken blijft retoriek slechts symbolisch.
-                </p>
-                <div class="spec-box">
-                    <strong>[Materiële Benchmark Specs]</strong><br>
-                    • Westerse productiecapaciteit (155mm): ~1.2M stuks per jaar<br>
-                    • Euraziatische productiecapaciteit: >4.5M stuks per jaar (geverifieerd)<br>
-                    • Knelpunt: Toeleveringsketen van nitrocellulose en speciaal staal.
-                </div>
-            </article>
-        </section>
-
-        <section class="sub-column">
-            <div class="widget-title">Laatste Data-Analyses</div>
-            
-            <article class="sub-article">
-                <span class="category-tag">Monetaire Systemen</span>
-                <a href="#">
-                    <h2>De-dollarisatie versnelt: Hoe de materiële handelsstromen SWIFT omzeilen</h2>
-                </a>
-                <div class="meta-info">Analist: Michael Hudson school</div>
-                <p class="summary" style="font-size:0.9rem;">
-                    Sancties hebben de opkomst van een parallel financieel systeem gedwongen. Grondstoffen worden niet langer in fiatdollars afgerekend.
-                </p>
-            </article>
-
-            <article class="sub-article">
-                <span class="category-tag">Logistieke Ketens</span>
-                <a href="#">
-                    <h2>Israëlische defensie-afhankelijkheid: Wat de munitietransfers over soevereiniteit zeggen</h2>
-                </a>
-                <div class="meta-info">Bron: Brian Berletic Data-analyse</div>
-                <p class="summary" style="font-size:0.9rem;">
-                    Een logistieke ontleding van de dagelijkse ISR- en munitievluchten vanuit de VS toont aan waar de feitelijke controlekamer zich bevindt.
-                </p>
-            </article>
-        </section>
-
+        <!-- DYNAMISCHE METRIC-KOLOMMEN WORDEN DOOR JAVASCRIPT INGEVULD -->
+        <section class="lead-article" id="main-content">Carrying out data synchronization...</section>
+        <section class="sub-column" id="sub-content"><div class="widget-title">Laatste Analyses</div></section>
         <aside class="sidebar">
-            <div>
-                <div class="widget-title">Meest Gelezen</div>
-                
-                <div class="most-read-item">
-                    <div class="most-read-number">1</div>
-                    <div class="most-read-text"><a href="#">Waarom de Amerikaanse Midterms de industriële realiteit aan de pomp niet kunnen veranderen.</a></div>
-                </div>
-
-                <div class="most-read-item">
-                    <div class="most-read-number">2</div>
-                    <div class="most-read-text"><a href="#">Raketbereik vs. Luchtverdediging: De pure fysica achter het vastlopen van de westerse doctrine.</a></div>
-                </div>
-
-                <div class="most-read-item">
-                    <div class="most-read-number">3</div>
-                    <div class="most-read-text"><a href="#">De-industrialisatie van Duitsland: Een logistieke autopsie op de Europese concurrentiekracht.</a></div>
-                </div>
+            <div class="widget-title">Systeem Status</div>
+            <div style="font-size:0.9rem; font-family:monospace; background:#f1f5f9; padding:15px; border-left:4px solid green;">
+                ● Node-status: Online<br>
+                ● DB Engine: Cloudflare D1<br>
+                ● Core LLM: Llama-3-8B-Instruct
             </div>
         </aside>
-
     </main>
 
     <footer>
-        <p>&copy; 2026 Geopolitweakers.nl • Onafhankelijke, materiële en logistieke observaties vanuit de westerse hegemonie.</p>
+        <p>&copy; 2026 Geopolitweakers.nl • Realtime materiële en logistieke observaties vanuit de westerse hegemonie.</p>
     </footer>
 
+    <!-- JAVASCRIPT DIE LIVE DE DATA UIT JE WORKER DRAAIT -->
+    <script>
+        async function loadLiveGeopolitweakersData() {
+            // Dit roept direct je zojuist geteste Worker aan om de D1 database te plunderen
+            const workerUrl = "https://workers.dev";
+            
+            try {
+                // We voegen een kleine truc toe om de data als JSON op te vragen in plaats van de test-tekst
+                const response = await fetch(workerUrl + "?format=json");
+                const articles = await response.json();
+                
+                if(!articles || articles.length === 0) return;
+
+                // 1. Vul het prominente hoofdartikel (Nieuwste item)
+                const lead = articles[0];
+                document.getElementById('main-content').innerHTML = `
+                    <article>
+                        <span class="category-tag">${lead.category}</span>
+                        <h1>${lead.title}</h1>
+                        <div class="meta-info">Gegenereerd door AI-Agent • ${new Date(lead.published_at).toLocaleString('nl-NL')}</div>
+                        <p class="summary">${lead.summary}</p>
+                        <div style="white-space: pre-line; color:#222;">${lead.content}</div>
+                        ${lead.spec_box ? `<div class="spec-box"><strong>[Materiële Benchmark Specs]</strong><br>${lead.spec_box}</div>` : ''}
+                    </article>
+                `;
+
+                // 2. Vul de sub-kolom met de overige analyses
+                let subHtml = '<div class="widget-title">Laatste Analyses</div>';
+                for(let i = 1; i < articles.length; i++) {
+                    subHtml += `
+                        <article class="sub-article">
+                            <span class="category-tag">${articles[i].category}</span>
+                            <h2>${articles[i].title}</h2>
+                            <p style="font-size:0.9rem; color:#444;">${articles[i].summary}</p>
+                        </article>
+                    `;
+                }
+                document.getElementById('sub-content').innerHTML = subHtml;
+
+                // 3. Update de live ticker tekst
+                document.getElementById('ticker-text').innerText = `++ CAPACITEIT UPDATE: ${lead.title} ++ SYSTEEM STATUS: 100% MATERIEEL SYNCHRONOON ++`;
+
+            } catch (error) {
+                console.error("Data kon niet worden geladen:", error);
+            }
+        }
+        window.onload = loadLiveGeopolitweakersData;
+    </script>
 </body>
 </html>
-
